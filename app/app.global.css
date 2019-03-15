@@ -1,0 +1,34 @@
+
+.lineUsers {
+  fill: none;
+  /* shape-rendering: crispEdges; */
+  stroke:black;
+  stroke-width: 2;
+}
+
+.lineUsers2 {
+  fill: none;
+  /* shape-rendering: crispEdges; */
+  stroke:black;
+  stroke-width: 2;
+}
+
+.grid line {
+  stroke: rgb(252, 160, 160);
+}
+
+.tick:nth-of-type(n){
+  stroke-width: .6;
+}
+.tick:nth-of-type(5n+1){
+  stroke-width: 1.5;
+}
+.domain{
+  stroke:none;
+}
+.viewer1{
+  border: 2px solid black;
+}
+.viewer2{
+  border: 2px solid black;
+}

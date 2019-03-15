@@ -1,0 +1,21 @@
+{
+  "name": "DeepRhythm",
+  "productName": "DeepRhythm",
+  "version": "1.0.0",
+  "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
+  "author": {
+    "name": "C. T. Lin",
+    "email": "chentsulin@gmail.com",
+    "url": "https://github.com/chentsulin"
+  },
+  "scripts": {
+    "electron-rebuild": "node -r babel-register ../internals/scripts/ElectronRebuild.js",
+    "postinstall": "npm run electron-rebuild"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "ffi": "^2.2.0",
+    "ref": "^1.3.5",
+    "ref-array": "^1.2.0"
+  }
+}

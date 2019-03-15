@@ -1,0 +1,251 @@
+{
+  "name": "DeepRhythm",
+  "productName": "DeepRhythm",
+  "version": "0.13.2",
+  "reportMinimumDuration": "1800000",
+  "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
+  "scripts": {
+    "dev": "cross-env START_HOT=1 node -r babel-register ./internals/scripts/CheckPortInUse.js && cross-env START_HOT=1 npm run start-renderer-dev ",
+    "start-main-dev": "cross-env HOT=1 NODE_ENV=development electron -r babel-register ./app/main.dev",
+    "start-renderer-dev": "cross-env NODE_ENV=development node --trace-warnings -r babel-register ./node_modules/webpack-dev-server/bin/webpack-dev-server --config webpack.config.renderer.dev.js"
+  },
+  "browserslist": "electron 1.6",
+  "build": {
+    "productName": "DeepRhythm",
+    "appId": "org.develar.ElectronReact",
+    "files": [
+      "build/",
+      "dist/",
+      "node_modules/",
+      "app.html",
+      "main.prod.js",
+      "main.prod.js.map",
+      "package.json"
+    ],
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "squirrel"
+      ]
+    },
+    "linux": {
+      "target": [
+        "zip",
+        "deb"
+      ],
+      "category": "Development"
+    },
+    "directories": {
+      "buildResources": "resources",
+      "output": "release"
+    },
+    "extraFiles": [
+      "build/",
+      "cpp/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chentsulin/electron-react-boilerplate.git"
+  },
+  "author": {
+    "name": "C. T. Lin",
+    "email": "chentsulin@gmail.com",
+    "url": "https://github.com/chentsulin"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chentsulin/electron-react-boilerplate/issues"
+  },
+  "keywords": [
+    "electron",
+    "boilerplate",
+    "react",
+    "redux",
+    "flow",
+    "sass",
+    "webpack",
+    "hot",
+    "reload"
+  ],
+  "homepage": "https://github.com/chentsulin/electron-react-boilerplate#readme",
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/fileMock.js",
+      "\\.(css|less|sass|scss)$": "identity-obj-proxy"
+    },
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "app/node_modules"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "setupFiles": [
+      "./internals/scripts/CheckBuiltsExist.js"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-jest": "^22.1.0",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-dev-expression": "^0.2.1",
+    "babel-plugin-flow-runtime": "^0.15.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-react-optimize": "^1.0.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chalk": "^2.3.0",
+    "concurrently": "^3.5.1",
+    "cross-env": "^5.1.3",
+    "cross-spawn": "^6.0.4",
+    "css-loader": "^0.28.9",
+    "detect-port": "^1.2.2",
+    "electron": "^2.0.10",
+    "electron-builder": "^20.28.4",
+    "electron-devtools-installer": "^2.2.4",
+    "electron-rebuild": "^1.8.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.1",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-formatter-pretty": "^1.3.0",
+    "eslint-import-resolver-webpack": "^0.8.4",
+    "eslint-plugin-compat": "^2.2.0",
+    "eslint-plugin-flowtype": "^2.42.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.7.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.8.2",
+    "express": "^4.16.2",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "fbjs-scripts": "^0.8.1",
+    "file-loader": "^1.1.6",
+    "flow-bin": "^0.64.0",
+    "flow-runtime": "^0.16.0",
+    "flow-typed": "^2.3.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^22.1.4",
+    "less-loader": "^4.1.0",
+    "minimist": "^1.2.0",
+    "node-sass": "^4.7.2",
+    "npm-logical-tree": "^1.2.1",
+    "react-test-renderer": "^16.2.0",
+    "redux-logger": "^3.0.6",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.6",
+    "sinon": "^4.2.2",
+    "spectron": "^3.8.0",
+    "style-loader": "^0.20.1",
+    "stylefmt": "^6.0.0",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0",
+    "uglifyjs-webpack-plugin": "1.1.8",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0",
+    "webpack-bundle-analyzer": "^2.9.2",
+    "webpack-dev-server": "^2.11.1",
+    "webpack-merge": "^4.1.1"
+  },
+  "dependencies": {
+    "@adonisjs/websocket-client": "^1.0.9",
+    "@vx/group": "0.0.153",
+    "@vx/mock-data": "0.0.153",
+    "@vx/scale": "0.0.153",
+    "@vx/shape": "0.0.160",
+    "adonis-websocket-client": "^1.0.2",
+    "app-builder-lib": "^20.28.2",
+    "async": "^2.6.1",
+    "axios": "^0.18.0",
+    "azbak": "^2.0.4",
+    "azure-storage": "^2.10.2",
+    "bindings": "^1.3.0",
+    "bootstrap": "^3.3.7",
+    "child_process": "^1.0.2",
+    "d3": "^5.9.1",
+    "devtron": "^1.4.0",
+    "download-file": "^0.1.5",
+    "downloads-folder": "^1.0.1",
+    "electron-builder-squirrel-windows": "^20.28.0",
+    "electron-context-menu": "^0.10.0",
+    "electron-debug": "^2.0.0",
+    "extract-zip": "^1.6.7",
+    "ffi": "^2.3.0",
+    "font-awesome": "^4.7.0",
+    "form-data": "^2.3.2",
+    "history": "^4.7.2",
+    "lodash": "^4.17.5",
+    "material-ui": "^0.20.0",
+    "moment": "^2.22.1",
+    "node-gzip": "^1.1.2",
+    "notifyjs": "^3.0.0",
+    "rc-time-picker": "^3.4.0",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-bootstrap-intl-tel-input": "^1.0.1",
+    "react-bootstrap-sweetalert": "^4.4.1",
+    "react-bootstrap-table": "^4.3.1",
+    "react-bootstrap-table2-paginator": "^0.1.3",
+    "react-bs-notifier": "^4.4.6",
+    "react-circular-progressbar": "^1.0.0",
+    "react-dom": "^16.2.0",
+    "react-dropdown": "^1.4.0",
+    "react-dygraphs": "0.0.1",
+    "react-hot-loader": "^4.0.0-beta.13",
+    "react-iframe": "^1.3.3",
+    "react-js-pagination": "^3.0.2",
+    "react-onclickoutside": "^6.7.1",
+    "react-pdf": "^4.0.0",
+    "react-redux": "^5.0.6",
+    "react-render-html": "^0.6.0",
+    "react-responsive-modal": "^2.0.1",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^5.0.0-alpha.6",
+    "react-select": "^2.0.0",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "semantic-ui-react": "^0.82.2",
+    "source-map-support": "^0.5.3",
+    "stream-chunkify": "^1.0.0",
+    "through2-concurrent": "^2.0.0",
+    "uninstall": "0.0.0",
+    "uuid": "^3.3.2",
+    "victory": "^0.25.7",
+    "zlib": "^1.0.5"
+  },
+  "devEngines": {
+    "node": ">=7.x",
+    "npm": ">=4.x",
+    "yarn": ">=0.21.3"
+  }
+}
