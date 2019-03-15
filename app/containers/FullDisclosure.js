@@ -37,11 +37,11 @@ export default class FullDisclosure extends Component {
 
             const x = d3.scaleLinear()
                 .domain([0, 1500])
-                .range([0, width]);
+                .range([0,70]);
 
             const y = d3.scaleLinear()
-                .domain([0, 100])
-                .range([100, 0]);
+                .domain([-1,1 ])
+                .range([150, 0]);
 
             // g.append("g")
             //   .attr("transform", "translate(0," + height + ")")
@@ -52,12 +52,11 @@ export default class FullDisclosure extends Component {
             //   .call(d3.axisLeft(y));
 
             const line = d3.line()
-
                 .x(function (d, i) {
-                    return x(i);
+                    return x(d[0]);
                 })
                 .y(function (d, i) {
-                    return y(d[0])
+                    return y(d[1])
                 })
 
             const numberOfGraph = 12;
@@ -83,7 +82,7 @@ export default class FullDisclosure extends Component {
 
     render() {
         return (
-            <div className="full-disclosure" height="610" width="1475">
+            <div className="full-disclosure" style={{"overflow": "auto","maxHeight":"600px", "width":"1500px"}}>
             </div>
         )
     }

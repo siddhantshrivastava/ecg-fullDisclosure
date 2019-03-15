@@ -10,7 +10,7 @@
   fill: none;
   /* shape-rendering: crispEdges; */
   stroke:black;
-  stroke-width: 2;
+  stroke-width: 1;
 }
 
 .grid line {

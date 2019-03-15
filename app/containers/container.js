@@ -8,9 +8,8 @@ var basePath = downloadsFolderPath + '/';
 export default class container extends Component {
   render() {
     return (
-      <div>
+      <div style={{padding:"20px"}}>
         <h1>DeepRthythm Viewer</h1>
-        <div className="main-container" width="1280" height="900" style={{ border: "solid 1px #eee", borderBottom: "solid 1px #ccc",padding:"10px" }} />
         <ViewerPage basePath={basePath}/>
         <FullDisclosure basePath={basePath}/>
       </div>
